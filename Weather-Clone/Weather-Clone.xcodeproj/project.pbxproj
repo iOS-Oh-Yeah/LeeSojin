@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		20F83DF2B8E9636C069B6804 /* Pods_Weather_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44636AE3CB103B075C037D4A /* Pods_Weather_Clone.framework */; };
+		232B8323284DE0C000E03557 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232B8322284DE0C000E03557 /* HomeVC.swift */; };
 		239BC0EC284DDB80000E336C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BC0EB284DDB80000E336C /* AppDelegate.swift */; };
 		239BC0EE284DDB80000E336C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BC0ED284DDB80000E336C /* SceneDelegate.swift */; };
-		239BC0F0284DDB80000E336C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BC0EF284DDB80000E336C /* ViewController.swift */; };
-		239BC0F3284DDB80000E336C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239BC0F1284DDB80000E336C /* Main.storyboard */; };
 		239BC0F5284DDB81000E336C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239BC0F4284DDB81000E336C /* Assets.xcassets */; };
 		239BC0F8284DDB81000E336C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239BC0F6284DDB81000E336C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232B8322284DE0C000E03557 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		239BC0E8284DDB80000E336C /* Weather-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		239BC0EB284DDB80000E336C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239BC0ED284DDB80000E336C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		239BC0EF284DDB80000E336C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		239BC0F2284DDB80000E336C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		239BC0F4284DDB81000E336C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		239BC0F7284DDB81000E336C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		239BC0F9284DDB81000E336C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,11 +63,10 @@
 			children = (
 				239BC0EB284DDB80000E336C /* AppDelegate.swift */,
 				239BC0ED284DDB80000E336C /* SceneDelegate.swift */,
-				239BC0EF284DDB80000E336C /* ViewController.swift */,
-				239BC0F1284DDB80000E336C /* Main.storyboard */,
 				239BC0F4284DDB81000E336C /* Assets.xcassets */,
 				239BC0F6284DDB81000E336C /* LaunchScreen.storyboard */,
 				239BC0F9284DDB81000E336C /* Info.plist */,
+				232B8322284DE0C000E03557 /* HomeVC.swift */,
 			);
 			path = "Weather-Clone";
 			sourceTree = "<group>";
@@ -80,7 +77,6 @@
 				580CC6FD871AA774E53C8D92 /* Pods-Weather-Clone.debug.xcconfig */,
 				EAC8DFAE8C2BE5BE4CFA2A1A /* Pods-Weather-Clone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +150,6 @@
 			files = (
 				239BC0F8284DDB81000E336C /* LaunchScreen.storyboard in Resources */,
 				239BC0F5284DDB81000E336C /* Assets.xcassets in Resources */,
-				239BC0F3284DDB80000E336C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				239BC0F0284DDB80000E336C /* ViewController.swift in Sources */,
+				232B8323284DE0C000E03557 /* HomeVC.swift in Sources */,
 				239BC0EC284DDB80000E336C /* AppDelegate.swift in Sources */,
 				239BC0EE284DDB80000E336C /* SceneDelegate.swift in Sources */,
 			);
@@ -216,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		239BC0F1284DDB80000E336C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				239BC0F2284DDB80000E336C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		239BC0F6284DDB81000E336C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,7 +351,6 @@
 				INFOPLIST_FILE = "Weather-Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,7 +362,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -393,7 +379,6 @@
 				INFOPLIST_FILE = "Weather-Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,7 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
