@@ -10,8 +10,9 @@ import SnapKit
 import Then
 
 class HomeVC: UIViewController {
-    private let summaryHeaderView = SummaryHeaderView()
-    private let tableView = UITableView()
+    var summaryHeaderView = SummaryHeaderView()
+    var summaryStickyView = SummaryStickyView()
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ extension HomeVC {
     private func configureUI(){
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         view.addSubview(summaryHeaderView)
+        view.addSubview(summaryStickyView)
         view.addSubview(tableView)
         tableView.backgroundColor = UIColor.clear
 
@@ -34,10 +36,17 @@ extension HomeVC {
             $0.trailing.equalToSuperview().offset(-113)
         }
         
+        summaryStickyView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(43)
+            $0.leading.equalToSuperview().offset(113)
+            $0.trailing.equalToSuperview().offset(-113)
+        }
+        
         tableView.snp.makeConstraints {
             $0.top.equalTo(summaryHeaderView.snp.bottom).offset(10)
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        summaryStickyView.alpha = 0
     }
     
     private func registerCell() {
@@ -52,7 +61,7 @@ extension HomeVC {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -66,5 +75,23 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+}
+
+extension HomeVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var scrollViewOffset = scrollView.contentOffset.y
+        
+        scrollViewOffset = scrollViewOffset < 0 ? -scrollViewOffset : scrollViewOffset
+        
+        if scrollViewOffset < 125 {
+            summaryHeaderView.snp.updateConstraints {
+                $0.top.equalTo(83-scrollViewOffset)
+            }
+        }
+        
+        summaryHeaderView.alpha = (125-scrollViewOffset) / 125
+        summaryStickyView.alpha = 1 - (125-scrollViewOffset) / 125
     }
 }

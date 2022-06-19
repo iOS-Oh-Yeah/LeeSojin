@@ -20,7 +20,7 @@ class SummaryStickyView : UIView {
     
     private let summaryLabel = UILabel().then {
         $0.text = "19º | 흐림"
-        $0.font = .systemFont(ofSize: 34)
+        $0.font = .systemFont(ofSize: 28)
         $0.textColor()
         $0.sizeToFit()
     }
@@ -41,7 +41,8 @@ class SummaryStickyView : UIView {
         addSubview(summaryStackView)
         
         summaryStackView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
+            $0.height.equalTo(100)
+            $0.top.bottom.leading.trailing.equalToSuperview()
         }
     }
 }
