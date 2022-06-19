@@ -12,7 +12,7 @@ import Then
 class HomeVC: UIViewController {
     var summaryHeaderView = SummaryHeaderView()
     var summaryStickyView = SummaryStickyView()
-    var tableView = UITableView()
+    var tableView = UITableView(frame: .zero, style: .insetGrouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class HomeVC: UIViewController {
     }
 }
 
+// MARK: - custom method
 extension HomeVC {
     private func configureUI(){
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -29,6 +30,7 @@ extension HomeVC {
         view.addSubview(summaryStickyView)
         view.addSubview(tableView)
         tableView.backgroundColor = UIColor.clear
+        tableView.contentInset = .zero
 
         summaryHeaderView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(83)
@@ -51,6 +53,7 @@ extension HomeVC {
     
     private func registerCell() {
         tableView.register(HourlyTempTVC.self, forCellReuseIdentifier: HourlyTempTVC.identifier)
+        tableView.register(LabelTVC.self, forCellReuseIdentifier: LabelTVC.identifier)
     }
     
     private func setUpTableView() {
@@ -59,26 +62,51 @@ extension HomeVC {
     }
 }
 
+// MARK: - TableView delegate
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.black.withAlphaComponent(0.1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTempTVC.identifier, for: indexPath) as? HourlyTempTVC else { return UITableViewCell() }
-        return cell
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: LabelTVC.identifier, for: indexPath) as? LabelTVC else { return UITableViewCell() }
+                return cell
+            } else  {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTempTVC.identifier, for: indexPath) as? HourlyTempTVC else { return UITableViewCell() }
+                return cell
+            }
+        default:
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                return 50
+            } else {
+                return 100
+            }
+        default:
+            return 100
+        }
     }
     
 }
 
+// MARK: - scrollview delegate
 extension HomeVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var scrollViewOffset = scrollView.contentOffset.y
@@ -95,3 +123,4 @@ extension HomeVC: UIScrollViewDelegate {
         summaryStickyView.alpha = 1 - (125-scrollViewOffset) / 125
     }
 }
+

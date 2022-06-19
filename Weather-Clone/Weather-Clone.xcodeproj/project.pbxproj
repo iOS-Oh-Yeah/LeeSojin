@@ -18,6 +18,7 @@
 		239BC0EE284DDB80000E336C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BC0ED284DDB80000E336C /* SceneDelegate.swift */; };
 		239BC0F5284DDB81000E336C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239BC0F4284DDB81000E336C /* Assets.xcassets */; };
 		239BC0F8284DDB81000E336C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239BC0F6284DDB81000E336C /* LaunchScreen.storyboard */; };
+		23C11AF4285F2496000E3D3A /* LabelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C11AF3285F2496000E3D3A /* LabelTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		239BC0F4284DDB81000E336C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		239BC0F7284DDB81000E336C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		239BC0F9284DDB81000E336C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23C11AF3285F2496000E3D3A /* LabelTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTVC.swift; sourceTree = "<group>"; };
 		44636AE3CB103B075C037D4A /* Pods_Weather_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		580CC6FD871AA774E53C8D92 /* Pods-Weather-Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather-Clone.debug.xcconfig"; path = "Target Support Files/Pods-Weather-Clone/Pods-Weather-Clone.debug.xcconfig"; sourceTree = "<group>"; };
 		EAC8DFAE8C2BE5BE4CFA2A1A /* Pods-Weather-Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather-Clone.release.xcconfig"; path = "Target Support Files/Pods-Weather-Clone/Pods-Weather-Clone.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				231E2FF62851D5B400A282A0 /* HourlyTempTVC.swift */,
 				231E2FF82851D60300A282A0 /* HourlyTempCVC.swift */,
+				23C11AF3285F2496000E3D3A /* LabelTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				232B8323284DE0C000E03557 /* HomeVC.swift in Sources */,
 				2352D68E2851048800CE8152 /* SummaryStickyView.swift in Sources */,
 				231E2FF92851D60300A282A0 /* HourlyTempCVC.swift in Sources */,
+				23C11AF4285F2496000E3D3A /* LabelTVC.swift in Sources */,
 				232B8329284DF0E600E03557 /* SummaryHeaderView.swift in Sources */,
 				239BC0EC284DDB80000E336C /* AppDelegate.swift in Sources */,
 				231E2FF72851D5B400A282A0 /* HourlyTempTVC.swift in Sources */,
